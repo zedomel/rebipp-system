@@ -1,0 +1,32 @@
+<script src="../js/interaction-worker.js"></script>
+
+
+<ul id="interaction-list">
+    
+</ul>
+
+<script>
+	const updateInteractionList = () => {
+		$("#interaction-list").html("loading...")
+        getInteractions((result)=>{
+            $("#interaction-list").html("")
+            result.forEach(record => {
+				console.log(`[${new Date().toISOString()}] `,record)				
+                $("#interaction-list").append(`<div class="visitante">                    										
+										<p class="div-visitante">                    
+										<a href="/interaction-profile/${record.pollinator}">                    
+										<i>${record["plant:dwc:Taxon:scientificName"]["value"]} x ${record["animal:dwc:Taxon:scientificName"]["value"]}</i>
+										</a></p>                    
+										<p class="legenda-int-p" ><span class="rcpol-InteractionLabel-typeOfVisit">${record["interaction:rebipp:RecordLevel:interactionType"]["field"]}</span>: ${record["interaction:rebipp:RecordLevel:interactionType"]["value"]}</p>
+										<p class="div-visitante">                    
+										<img src="/images/eco_ref.png" title="${record.reference}" class="popsref">                    
+										<img src="/images/eco_copyr.png" title="${record.credits}" class="popsref">
+										</p>                        
+									</div>`)
+            })            
+        })
+	}
+    $(function(){		
+		updateInteractionList()
+    })
+</script>

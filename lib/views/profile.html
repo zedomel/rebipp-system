@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+
+    <head>
+        <title>iAlumni</title>
+        
+        <meta charset="utf-8"/>
+
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+        <link rel="stylesheet" href="/bower_components/bootstrap/bootstrap4.0.0-alpha.2.css"/>        
+        <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="/bower_components/jquery-ui/themes/base/jquery-ui.css"/>           
+
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/jquery-ui/jquery-ui.min.js" ></script>
+        <script src="/bower_components/jquery-confirm/jquery.confirm.min.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="/js/main.js"></script>
+        <link rel="stylesheet" href="/css/main.css"/>
+
+    </head>
+
+    <body>
+
+        <form name="frmMain" method="post" action="index.php" target="_self">
+
+            <nav class="navbar navbar-light navbar-fixed-top" style="background-color: #007DA3; border-radius:0px;">
+
+                <div class="navbar-brand" style="color: #ffffff; padding:0px;">
+                    <a style="margin: 0px;" class="nav-link" href="http://alumni.usp.br" target="_blank"><img style="height: 44px;" src="/images/logo_alumni.png"/></a>
+                </div>
+
+                <button style="margin: 0px; margin-top: 4px; background-color: #FBB437; color: #ffffff; font-size: 9pt;" class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
+
+                <div class="collapse navbar-toggleable-xs" id="navbarResponsive">
+
+                    <div class="col-xs-12 col-md-8 col-xl-9">
+
+                        <ul class="nav navbar-nav" style="margin-top: 0.5%;">
+                                          
+                            <li class="nav-item" style="margin-right: 5px; margin-left: 10px;">
+                                <a style="color: #eeeeee;" class="nav-link" href="javascript:sendMenu(0);">Serviços</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a style="color: #eeeeee;" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Meus Dados</a>
+
+                                <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="">Pessoais</a>
+
+                                    <a class="dropdown-item" href="">Profissionais</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    
+                                    <a class="dropdown-item" href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i><font style="">&nbsp;&nbsp;</font>Linkedin</a>
+                                    
+                                    <div class="dropdown-divider"></div>                                
+                                    
+                                    <a class="dropdown-item" href="">Trocar Senha&nbsp;</a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href=""><i class="fa fa-unlock-alt" aria-hidden="true"></i><font style="">&nbsp;&nbsp;</font>Privacidade</a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href=""><i class="fa fa-user" aria-hidden="true"></i> &nbsp;Meu perfil</a>
+
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a style="color: #eeeeee;" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Privacidade</a>
+
+                                <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="javascript:sendForm(3);">Política de Privacidade</a>                                
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="javascript:sendForm(4);">Termos de Uso</a>                                
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="javascript:sendForm(2);"><i class="fa fa-bullhorn" aria-hidden="true" style="font-weight: bold; font-size: 11pt;"></i> &nbsp;Fale Conosco</a>
+
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item" style="margin-top: 7px;">
+                                <a href="javascript:sendForm(8);">Sair</a>
+                            </li>                        
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+            <br/><br/><br/><br/>
+
+            <div class="container" style="background-color: transparent;">
+
+
+                <div class="container" style="margin-bottom: 30px;">
+
+                    <div class="row">
+
+                        <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2">
+
+                             <p style="margin: 5px 0px 10px 0px; font-size: 13pt; font-weight: bold; color: #666666;">Perfil Alumni&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:sendForm(0);" style="font-size: 11pt; font-weight: bold; color: #ff8800;"><i class="fa fa-reply" aria-hidden="true"></i> voltar</a></p>
+
+                                    <br/>
+
+                            <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-12 col-xl-offset-0" style="padding: 0px; background-color: #fafafa; padding-left: 1.5%; padding-right: 1.5%; padding-top: 1%; padding-left: 1%;">
+
+                                <div class="row">
+
+                                    <div class="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-0 col-xl-2 col-xl-offset-0" style="padding: 0px; padding-top: 2%; padding-bottom: 2%; text-align: center; vertical-align: top;">
+
+                                        <img class="card-img-top" src="/images/unknown.gif" alt="" style="width: 80px; height: 80px; margin:0px; border-radius: 5px 5px 0px 0px; padding: 0px; opacity: 0.2;">
+
+                                    </div>
+
+                                    <div class="col-xs-12 col-md-10 col-xl-10" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px;">
+
+                                        <div class="row">
+                            
+                                            <div class="col-xs-12 col-md-8 col-xl-8">
+
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-12 col-xl-12" style="font-weight: bold; font-size: 11pt; padding: 6px 0px 4px 0px;">
+                                                        Etienne Américo Cartolano Junior
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-12 col-xl-12" style="padding-top: 5px; padding-left: 0px; font-size: 11pt; ">
+                                                        Data Science Manager
+                                                    </div>
+                                                </div>                
+
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-12 col-xl-12" style="padding-top: 10px; padding-left: 0px;  font-size: 10pt; color: #666666; font-weight: bold;">
+                                                        Banco Itaú-Unibanco - Financeiro
+                                                    </div>
+                                                </div>                
+
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-12 col-xl-12" style="padding-top: 10px; padding-left: 0px; padding-bottom: 10px;">
+                                                        <i class="fa fa-map-marker" aria-hidden="true"></i> Butantã - São Paulo, SP - Brasil
+                                                    </div>
+                                                </div>                
+                                    
+                                            </div>
+
+                                            <div class="col-xs-12 col-md-4 col-xl-4" style="margin:0px; padding: 5px; padding-top: 15px; padding-right: 0px; vertical-align: top; ">
+
+                                                <div class="row" style="margin-top: 0px; padding: 10px; text-align: center; background-color: #ffffff; border: 1px solid #dedede; border-radius: 5px; border-bottom: 0 none; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.46);">
+
+                                                    <i style="font-size: 14pt; color: <?php if($privacy_share["share"]["email"] == 1) { ?> #2E87DC <?php } else { ?> #DFDFDF <?php } ?>;" class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;
+                                                    <i style="font-size: 14pt; color: <?php if($privacy_share["share"]["locality"] ==1 ) { ?> #2E87DC <?php } else { ?> #DFDFDF <?php } ?>;" class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;
+
+                                                    <i style="font-size: 14pt; color: #2E87DC;" class="fa fa-industry" aria-hidden="true"></i>&nbsp;&nbsp;
+                                                    <i style="font-size: 14pt; color: #DFDFDF;" class="fa fa-industry" aria-hidden="true"></i>&nbsp;&nbsp;
+                                                    
+                                                    <i style="font-size: 14pt; color: <?php if($privacy_share["share"]["company"] ==1 ) { ?> #2E87DC <?php } else { ?> #DFDFDF <?php } ?>;" class="fa fa-industry" aria-hidden="true"></i>&nbsp;&nbsp
+
+                                                    <i style="font-size: 14pt; color: <?php if($privacy_share["share"]["company"] ==1 ) { ?> #2E87DC <?php } else { ?> #DFDFDF <?php } ?>;" class="fa fa-industry" aria-hidden="true"></i>&nbsp;&nbsp;
+                                                    <i style="font-size: 14pt; color: <?php if($privacy_share["share"]["title"] == 1) { ?> #2E87DC <?php } else { ?> #DFDFDF <?php } ?>;" class="fa fa-sitemap" aria-hidden="true"></i>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2" style="text-align: right; padding-top: 10px; font-size: 8pt; color: gray;">        
+                
+                            último acesso em 11 Abril 2019
+
+                        </div>
+
+                        <br/>
+
+                        <div class="row" style="margin: 15px;">
+
+                            <div class="col-xs-12 col-md-6 col-xl-4 col-xl-offset-2">
+
+                                <p style="font-weight: bold; margin: 40px 0px 15px 15px; color: #005FA9;">Cursos Concluídos na USP</p>
+
+                                <div class="card" style="margin-bottom: 25px; border-radius: 5px; border-bottom: 0 none; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.46);">
+
+                                    <div class="card-header" style="text-align: center;">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Pós-Graduação
+                                    </div>
+
+                                    <div class="card-block" style="padding: 0px">
+                                        <p class="card-title" style="font-weight: bold; margin: 0px; line-height: 170%;">Doutorado</p>
+                                    </div>
+
+                                    <div class="card-block" style="padding: 0px">
+                                        <p class="card-text" style="margin: 10px; text-align: center; font-weight: bold; color: #666666;">
+                                            Engenharia Elétrica</p>
+                                    </div>
+
+                                    <div class="card-block" style="padding: 0px">
+                                        <p class="card-text" style="margin: 10px; text-align: center; font-weight: bold; color: #666666;">
+                                            Engenharia de Computação</p>
+                                    </div>
+
+                                    <ul class="list-group list-group-flush" style="color: #666666;">
+
+                                        <li class="list-group-item"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                            &nbsp;Escola Politécnica</li>
+
+                                        <?php if($enrollment['area']['name']) {?><li class="list-group-item"><i class="fa fa-angle-double-right" aria-hidden="true"></i> &nbsp;<?php echo $enrollment['area']['name'];?></li><?php } ?>
+
+                                        <?php if($enrollment["date"]["start"]["year"] || $enrollment["date"]["end"]["year"]) {?><li class="list-group-item"><i class="fa fa-angle-double-right" aria-hidden="true"></i> &nbsp;<?php echo $enrollment["date"]["start"]["year"]; if($enrollment["date"]["end"]["year"]) {echo " - ".$enrollment["date"]["end"]["year"];}?></li> <?php } ?>
+
+                                        <li class="list-group-item"><i class="fa fa-angle-double-right" aria-hidden="true"></i> 
+                                            &nbsp;Integral</li>
+
+                                    </ul> 
+
+                                </div> 
+                                
+                                    <?php }
+                                    
+                                } else { ?>
+
+                                    Dados não disponíveis
+                                     
+                                <?php } ?>
+
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-xl-4">
+
+                                <p style="font-weight: bold; margin: 40px 0px 15px 15px; color: #005FA9;">Dados Profissionais</p>
+
+                                <?php 
+
+                                $positions = $_alumnusfullprofile['professionals']; 
+                                $count_positions = count($positions);
+
+                                if($count_positions > 0 && (in_array($constant_COMPANY, $_alumnusfullprofile['privacy']) || in_array($constant_TITLE, $_alumnusfullprofile['privacy']))) {
+
+                                    for($p = 0; $p < $count_positions; $p++) { ?>
+
+                                        <div class="card" style="margin-bottom: 25px; border-radius: 5px; border-bottom: 0 none; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.46);">
+
+                                            <div class="card-header" style="text-align: center;">
+
+                                                <i class="fa fa-suitcase" aria-hidden="true"></i> &nbsp;
+
+                                                <?php if($positions[$p]["period"]["start"]["year"]) {
+
+                                                    if($positions[$p]["period"]["start"]["month"]) {echo ucfirst(strtolower(months($positions[$p]["period"]["start"]["month"], 1)));}
+
+                                                    echo " ".$positions[$p]["period"]["start"]["year"]." até ";
+
+                                                    if($positions[$p]["period"]["end"]["year"]) {
+
+                                                        if($positions[$p]["period"]["end"]["month"]) {echo ucfirst(strtolower(months($positions[$p]["period"]["end"]["month"], 1)));}
+                                                        echo " ".$positions[$p]["period"]["end"]["year"];
+
+                                                    } else {
+                                                        if($positions[$p]["period"]["iscurrent"]) { ?> o momento <?php;}
+                                                    } 
+
+                                                } else { ?>
+
+                                                    <font style="color: #777777;">Período não informado</font>
+
+                                                <?php } ?>
+
+                                            </div>
+
+                                            <?php if($positions[$p]["company"]["name"] && in_array($constant_COMPANY, $_alumnusfullprofile['privacy'])) {?>
+                                                <div class="card-block" style="padding: 0px">
+                                                    <p class="card-title" style="font-weight: bold; margin: 0px;"><?php echo $positions[$p]["company"]["name"]; ?></p>
+                                                </div>
+                                                <ul class="list-group list-group-flush" style="color: #666666;">
+                                                    <?php if($positions[$p]["company"]["type"]["name"]) { ?> <li class="list-group-item"> <i class="fa fa-angle-double-right" aria-hidden="true"></i> &nbsp;<?php echo $positions[$p]["company"]["type"]["name"]; ?> </li> <?php } ?>
+                                                    <?php if($positions[$p]["company"]["industry"]["name"]) { ?> <li class="list-group-item"> <i class="fa fa-angle-double-right" aria-hidden="true"></i> &nbsp;<?php echo $positions[$p]["company"]["industry"]["name"]; ?> </li> <?php } ?>
+                                                </ul>
+                                            <?php } ?>                                
+                                            <?php if($positions[$p]["title"]["name"] && in_array($constant_TITLE, $_alumnusfullprofile['privacy'])) {?>
+                                                <div class="card-block" style="padding: 10px">                            
+                                                    <p class="card-text" style="padding-left: 5%; padding-right: 5%; text-align: center; font-weight: bold; color: #666666;"><?php echo $positions[$p]["title"]["name"];?></p>
+                                                </div>
+                                                <ul class="list-group list-group-flush" style="color: #666666;">
+                                                    <?php if($positions[$p]["title"]["type"]["name"]) { ?> <li class="list-group-item"> <i class="fa fa-angle-double-right" aria-hidden="true"></i> &nbsp;<?php echo $positions[$p]["title"]["type"]["name"]; ?> </li> <?php } ?>
+                                                </ul>                        
+                                            <?php } ?>
+                                        </div>
+
+                                    <?php } ?>
+
+                                 <?php } else { ?>
+
+                                        <p style="margin-top: 15px; font-weight: bold; text-align: center;">Não disponíveis</p>
+
+                                <?php } ?>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+    </div> 
+
+
+
+
+
+
+            </div>
+
+            <br/><br/><br/><br/>
+
+            <div class="rodape navbar navbar-light navbar-static-bottom" style="padding: 5px; padding-left: 20px; ">
+
+                <ul class="nav navbar-nav">
+
+                    <li class="nav-item"><a  style="color: #cccccc;font-size: 10.5pt;" class="nav-link" >© iAlumni</a></li>
+
+                </ul>                
+
+            </div>
+
+        </form>
+
+    </body>
+
+</html>
