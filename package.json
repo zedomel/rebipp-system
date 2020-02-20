@@ -1,0 +1,42 @@
+{
+  "name": "rebipp-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/lib",
+  "scripts": {
+    "start": "nodemon lib/index.js --exec babel-node --ignore views/*",
+    "build": "babel lib -d dist",
+    "serve": "node dist/index.js",
+    "test": "nodemon lib/test.js --exec babel-node"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-proposal-export-namespace-from": "^7.7.4",
+    "@babel/plugin-proposal-function-sent": "^7.7.4",
+    "@babel/plugin-proposal-json-strings": "^7.7.4",
+    "@babel/plugin-proposal-numeric-separator": "^7.7.4",
+    "@babel/plugin-proposal-throw-expressions": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-syntax-import-meta": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-session": "^1.17.0",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.8.0",
+    "mysql": "^2.16.0",
+    "node-uuid": "^1.4.8",
+    "path": "^0.12.7",
+    "google-auth-library": "0.10.0",
+    "googleapis": "12.4.0"
+  }
+}

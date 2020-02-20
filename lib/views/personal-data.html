@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+
+    <head>
+        <title>iAlumni</title>
+        
+        <meta charset="utf-8"/>
+
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+        <link rel="stylesheet" href="/bower_components/bootstrap/bootstrap4.0.0-alpha.2.css"/>        
+        <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="/bower_components/jquery-ui/themes/base/jquery-ui.css"/>           
+
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/jquery-ui/jquery-ui.min.js" ></script>
+        <script src="/bower_components/jquery-confirm/jquery.confirm.min.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="/js/main.js"></script>
+        <link rel="stylesheet" href="/css/main.css"/>
+
+    </head>
+
+    <body>
+
+        <form name="frmMain" method="post" action="index.php" target="_self">
+
+            <nav class="navbar navbar-light navbar-fixed-top" style="background-color: #007DA3; border-radius:0px;">
+
+                <div class="navbar-brand" style="color: #ffffff; padding:0px;">
+                    <a style="margin: 0px;" class="nav-link" href="http://alumni.usp.br" target="_blank"><img style="height: 44px;" src="/images/logo_alumni.png"/></a>
+                </div>
+
+                <button style="margin: 0px; margin-top: 4px; background-color: #FBB437; color: #ffffff; font-size: 9pt;" class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
+
+                <div class="collapse navbar-toggleable-xs" id="navbarResponsive">
+
+                    <div class="col-xs-12 col-md-8 col-xl-9">
+
+                        <ul class="nav navbar-nav" style="margin-top: 0.5%;">
+
+                            <li class="nav-item" style="margin-right: 5px; margin-left: 10px;">
+                                <a style="color: #eeeeee;" class="nav-link" href="javascript:sendMenu(0);">Serviços</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a style="color: #eeeeee;" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Meus Dados</a>
+
+                                <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="">Pessoais</a>
+
+                                    <a class="dropdown-item" href="">Profissionais</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    
+                                    <a class="dropdown-item" href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i><font style="">&nbsp;&nbsp;</font>Linkedin</a>
+                                    
+                                    <div class="dropdown-divider"></div>                                
+                                    
+                                    <a class="dropdown-item" href="">Trocar Senha&nbsp;</a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href=""><i class="fa fa-unlock-alt" aria-hidden="true"></i><font style="">&nbsp;&nbsp;</font>Privacidade</a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href=""><i class="fa fa-user" aria-hidden="true"></i> &nbsp;Meu perfil</a>
+
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a style="color: #eeeeee;" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Privacidade</a>
+
+                                <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="javascript:sendForm(3);">Política de Privacidade</a>                                
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="javascript:sendForm(4);">Termos de Uso</a>                                
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="javascript:sendForm(2);"><i class="fa fa-bullhorn" aria-hidden="true" style="font-weight: bold; font-size: 11pt;"></i> &nbsp;Fale Conosco</a>
+
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item" style="margin-top: 7px;">
+                                <a href="javascript:logout();">Sair</a>
+                            </li>                        
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+            <br/><br/><br/><br/>
+
+            <div class="container" style="background-color: transparent;">
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+
+                        <div class="container">
+
+                            <div class="row">
+
+                                <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2">
+
+                                    <div class="alert alert-danger" role="alert"> Mensagem de Alerta </div>
+                                    <div class="alert alert-success" role="alert">Sucesso! Suas alterações foram registradas!</div>
+                                    <div class="alert alert-warning" role="alert">Nenhuma alteração foi registrada.</div>
+                                    <div class="alert alert-danger" role="alert">Erro! Algum erro aconteceu, <a href="javascript:sendForm(2);" alt="">clique aqui</a> para entrar em contato.</div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="container">
+
+                            <div class="row">
+
+                                <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2">
+                                    
+                                    <p style="margin: 5px 0px 10px 0px; font-size: 13pt; font-weight: bold; color: #666666;">Meus dados pessoais&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:sendForm(0);" style="font-size: 11pt; font-weight: bold; color: #ff8800;"><i class="fa fa-reply" aria-hidden="true"></i> voltar</a></p>
+
+                                    <br/>
+
+                                    <div class="row" style="margin-top: 0px; margin-bottom: 0px; padding: 0px; padding-top: 1%; padding-bottom: 1%; background-color: #fafafa;">
+
+                                        <div class="col-xs-12 col-md-3 col-md-offset-1 col-xl-3 col-xl-offset-0" style="padding: 0px; padding-top: 2%; padding-bottom: 2%; text-align: center; background-color: #fafafa;">
+
+                                            <img style="border-radius: 5px 5px 0px 0px; border: 1px solid #dddddd; width: 78px; height: 80px;" src="/images/unknown.gif" alt=""/>
+
+                                        </div>
+                                        <div class="col-xs-12 col-md-8 col-xl-8" style="margin-top: 20px; padding-left: 5px;">
+
+                                            <input onkeydown="this.blur();" onChange="javascript:document.frmMain.enctype='multipart/form-data'; document.frmMain.encoding='multipart/form-data';" name="photo" id="photoalumni" type="file" value="">
+                                            
+                                            <p style="color gray; font-size: 9pt; margin: 15px 0px 0px 5px;"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp; Escolha imagens de até 4 Mb.</p>
+
+                                        </div>
+
+                                    </div>  
+
+                                    <br/>
+
+                                    <div class="row" style="padding: 0px; margin-bottom: 10px; border-radius: 5px; border-bottom: 0 none; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.46); border: 1px solid #dedede;"> 
+
+                                        <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1" style="">
+                                        
+                                            <div class="form-group row">
+
+                                                <label style="margin: 0px; text-align: center; padding-top: 8px;" for="status_pro" class="col-xs-1 col-md-1 col-xl-1 form-control-label"><i class="fa fa-user" style="font-size: 14pt; color: #a6a6a6;" aria-hidden="true"></i></label>
+
+                                                <div class="col-xs-11 col-md-11 col-xl-10" style="padding: 0px;">
+
+                                                    <select style="width:100%; border: 0px;" class="c-select" id="status_pro" name="status_pro">
+                                                        <option value="">No momento eu...</option>
+                                                        <option value="1">Estou empregado na minha área de Formação</option>
+                                                        <option value="2">Estou empregado fora na minha área de Formação</option>
+                                                        <option value="3">Sou empreendedor</option>
+                                                        <option value="4">Sou estudante com bolsa</option>                    
+                                                        <option value="8">Sou estudante</option>                    
+                                                        <option value="5">Procuro meu primeiro emprego</option>
+                                                        <option value="6">Estou desempregado</option>
+                                                        <option value="7">Estou aposentado</option> 
+                                                    </select>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div> 
+
+                                    <div class="row" style="padding: 0px; margin-bottom: 10px; border: 1px solid #dedede; border-radius: 5px; border-bottom: 0 none; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.46);"> 
+
+                                        <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1" style="">
+                                        
+                                            <div class="form-group row">
+
+                                                <label style="margin: 0px; text-align: center; padding-top: 8px;" for="idcompany" class="col-xs-1 col-md-1 col-xl-1 form-control-label"><i class="fa fa-commenting" style="font-size: 14pt; color: #a6a6a6;" aria-hidden="true"></i></label>
+
+                                                <div class="col-xs-11 col-md-11 col-xl-10" style="padding: 0px;">
+
+                                                    <input style="border: 0px;" type="text" class="form-control" name="headline" id="headline" maxlength="60" title="Minha apresentação pessoal e/ou profissional. (ex: Engenheiro e entusiasta de novas tecnologias)" placeholder="Ex: Engenheiro e entusiasta de novas tecnologias" value="">
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>    
+            
+
+                                    <div class="row" style="padding: 0px; margin-bottom: 10px; border: 1px solid #dedede; border-radius: 5px; border-bottom: 0 none; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.46);"> 
+
+                                        <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1" style="">
+                                        
+                                            <div class="form-group row">
+
+                                                <label style="margin: 0px; text-align: center; padding-top: 7px;" for="idcompany" class="col-xs-1 col-md-1 col-xl-1 form-control-label"><i class="fa fa-envelope" style="font-size: 13pt; color: #a6a6a6;" aria-hidden="true"></i></label>
+
+                                                <div class="col-xs-11 col-md-11 col-xl-10" style="padding: 0px;">
+
+                                                    <input type="email" style="border: 0px;" class="form-control" id="email" name="email" value="" placeholder="Meu e-mail pessoal">
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>  
+
+                                    <div class="row" style="padding: 0px; margin-bottom: 10px; border: 1px solid #dedede; border-radius: 5px; border-bottom: 0 none; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.46);"> 
+
+                                        <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1" style="">
+                                        
+                                            <div class="form-group row">
+
+                                                <label style="margin: 0px; text-align: center; padding-top: 7px;" for="idcompany" class="col-xs-1 col-md-1 col-xl-1 form-control-label"><i class="fa fa-map-marker" style="font-size: 14pt; color: #a6a6a6;" aria-hidden="true"></i></label>
+
+                                                <div class="col-xs-11 col-md-11 col-xl-10" style="padding: 0px;">
+
+                                                    <input rows="3" style="border: 0px;" type="text" class="form-control" title="Você pode informar o CEP, Caixa Postal, Postal Code, Cidade ou País <font style='color: yellow;'>e <b>clicar</b> em uma das opções apresentadas durante a digitação.</font>" id="autocomplete" name="autocomplete" value="" placeholder="CEP"></input>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>                  
+
+                                    <div class="row" style="padding: 10px 0px 20px 0px; margin-bottom: 10px; text-align: right;"> 
+
+                                        <div class="col-xs-12 col-md-12 col-xl-12" style="padding: 0px;">
+
+                                            <a class="btn btn-primary" href="javascript:submit();" role="button"><i class="fa fa-check" aria-hidden="true"></i> &nbsp;Salvar</a>
+                                            
+
+                                            <a class="btn btn-warning" href="javascript:next();" role="button">Continuar</a>
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <br/><br/><br/><br/>
+
+            <div class="rodape navbar navbar-light navbar-static-bottom" style="padding: 5px; padding-left: 20px; ">
+
+                <ul class="nav navbar-nav">
+
+                    <li class="nav-item"><a  style="color: #cccccc;font-size: 10.5pt;" class="nav-link" >© iAlumni</a></li>
+
+                </ul>                
+
+            </div>
+
+        </form>
+
+    </body>
+
+</html>
