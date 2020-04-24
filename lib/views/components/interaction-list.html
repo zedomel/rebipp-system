@@ -9,20 +9,25 @@
 	const updateInteractionList = () => {
 		$("#interaction-list").html("loading...")
         getInteractions((result)=>{
-            $("#interaction-list").html("")
+			$("#interaction-list").html("")
+			console.log(`[${new Date().toISOString()}] RESULT`,result)
             result.forEach(record => {
-				console.log(`[${new Date().toISOString()}] `,record)				
-                $("#interaction-list").append(`<div class="visitante">                    										
-										<p class="div-visitante">                    
-										<a href="/interaction-profile/${record.pollinator}">                    
-										<i>${record["plant:dwc:Taxon:scientificName"]["value"]} x ${record["animal:dwc:Taxon:scientificName"]["value"]}</i>
-										</a></p>                    
-										<p class="legenda-int-p" ><span class="rcpol-InteractionLabel-typeOfVisit">${record["interaction:rebipp:RecordLevel:interactionType"]["field"]}</span>: ${record["interaction:rebipp:RecordLevel:interactionType"]["value"]}</p>
-										<p class="div-visitante">                    
-										<img src="/images/eco_ref.png" title="${record.reference}" class="popsref">                    
-										<img src="/images/eco_copyr.png" title="${record.credits}" class="popsref">
-										</p>                        
-									</div>`)
+				if(
+					record["plant:dwc:Taxon:scientificName"] && record["plant:dwc:Taxon:scientificName"]["value"]
+					&& record["interaction:rebipp:Interaction:interactionType"] && record["interaction:rebipp:Interaction:interactionType"]["value"]
+					&& record["animal:dwc:Taxon:scientificName"] && record["animal:dwc:Taxon:scientificName"]["value"]
+				) {
+					$("#interaction-list").append(`
+						<div class="visitante">                    										
+							<p class="div-visitante">                    
+								<a href="/interaction-profile/${"todo"}">                    
+									<i>${record["plant:dwc:Taxon:scientificName"]["value"]}</i> <span style="color:#123123">${record["interaction:rebipp:Interaction:interactionType"]["value"]}</span> <i>${record["animal:dwc:Taxon:scientificName"]["value"]}</i>
+								</a>
+							</p>                    
+							
+							<p class="div-visitante"></p>                        
+						</div>`)
+				}
             })            
         })
 	}
