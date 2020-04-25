@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<!-- Google fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic|Roboto+Condensed' rel='stylesheet' type='text/css'>    
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>            
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+
+    <!-- Css Documento -->
+	<link rel="stylesheet" href="/css/data_quality.css">
+
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	
+	<link rel="stylesheet" href="/bower_components/jquery-ui/themes/base/jquery-ui.min.css">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css"  media="screen,projection"/>	
+    
+
+	<!-- Css Documento -->
+	<link rel="stylesheet" href="/css/eco_fichas.css">
+
+	<title>REBIPP</title>
+
+	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="/js/internationalization.js"></script>
+	<script>
+        $(function(){
+            $("#header").load("/components/header.html"); 
+            $("#list").load("/components/interaction-list.html"); 
+            $("#footer").load("/components/footer.html"); 
+        });
+    </script> 
+</head>
+<body>
+<div class="contem">
+	<!-- Modal Structure -->
+	<div id="details" class="modal bottom-sheet">
+		<div class="modal-content">
+		<h4>Assertion Details</h4>
+		<div>
+			<textarea style="height:15em" id="d-content"></textarea>
+		</div>
+		</div>
+		<div class="modal-footer">
+		<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+		</div>
+	</div>
+	<!-- Início Header: Menu e Logotipo -->
+	<header>
+		<!-- Menu: início -->
+		
+		<!-- Menu: fim -->
+		<!-- logotipo -->
+		<div class="logo">
+			<img src="https://www.rebipp.org.br/wp-content/uploads/2017/08/12654381_10153871230836407_6739059577886817957_n-01-768x949.png" alt="REBIPP" height="194px">
+		</div>
+		<!-- logotipo -->
+
+	</header>
+	<!-- Fim Header: Menu e Logotipo -->
+	
+		<div class="container" style="width:100%">
+			<article>
+				<div class="row">
+					<div class="col s12">
+						<h1 class="glo-tit" id="rcpol-Admin-siteGlossary" style="margin-bottom: 0px">Publish data</h1>
+					</div>
+				</div>
+                <div class="row" style="padding: 0em 2em 0em 0em">
+                    <br>
+					<!-- <div class="title col s12">											
+						<h3 style="font-size: 150%; margin:0px margin-bottom:1em">Spreadsheet URL</h3> 
+					</div> -->
+					<div class="input-field col s12">
+						<input id="url-table" value="" placeholder="https://docs.google.com/spreadsheets/d/1gH0aa2qqnAgfAixGom3Gnx6Qp91ZvWhUHPb_QeoIreQ/edit#gid=765248797" id="url" type="text" class="validate">
+						<label class="active" for="url">Spreadsheet URL:</label>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="input-field col s12">											
+						<h3 style="font-size: 150%; margin:0px">Sheets</h3> 
+					</div>
+					<div class="col s12" >											
+						<div class="collection">
+							<a href="#!" class="collection-item" style="text-align:left">
+								<span id="publish-button" class="badge green white-text" style="font-size:80%">								
+									<i class="material-icons left">cached</i> <span id="publish-button-label">Publish</span>
+								</span>													
+								Interactions
+							</a>
+						</div>
+					</div>																																		
+				</div>							
+			</article>	
+		</div>		
+				
+	<!-- Final das informações da Palinoteca -->		
+	<!-- Início do Rodapé -->
+	<footer>
+		<p class="translate" id="copyright">Copyright &copy; 2020 REBIPP - Todos os direitos reservados e outras informa&ccedil;&otilde;es</p>
+	</footer>
+	<!-- Final do Rodapé -->	
+</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>
+	<script type="text/javascript">		
+		var base;
+		var lang;		
+		$(document).ready(function(){				
+			$("#publish-button").click(function() {
+				$("#publish-button").removeClass("green");
+				$("#publish-button").addClass("orange");
+				$("#publish-button-label").html("Loading...");
+
+				$("#glossary-en-us").hide();
+				$("#glossary-es-es").hide();
+				$("#specimen").hide();
+				$("#institution").hide();
+				$("#key").hide();
+				$("#glossary-images").hide();
+				$("#specimen-images").hide();
+
+				const url = $("#url-table").val()
+				$.get("/api/v1/publish?url="+url,function(rs) {
+                    $("#publish-button-label").html("Done!");
+                    $("#publish-button").removeClass("orange");
+                    $("#publish-button").addClass("blue");
+                    $("#glossary-en-us").show();
+                    $("#glossary-es-es").show();
+                    $("#specimen").show();
+                    $("#institution").show();
+                    $("#key").show();
+                    $("#glossary-images").show();
+                    $("#specimen-images").show();
+				});
+			});
+		});
+			
+	</script>
+</body>
+</html>
