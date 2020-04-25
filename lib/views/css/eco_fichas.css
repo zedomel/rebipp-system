@@ -458,3 +458,9 @@ img.int-icon-leg {
 img.int-icon {
 	margin: 0 5px 0 0;
 }
+
+.link-source {
+	margin-left: 1em;
+	font-size: 12px;
+	color: #F9C6A7;
+}
