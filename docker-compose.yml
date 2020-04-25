@@ -2,29 +2,29 @@ version: '3'
 volumes:
   mongodb:
     external: true
-
+# todo SETUP ENV VAR
 services:
-  rebipp_database:
-    image: mongo:latest
-    container_name: "rebipp_database"
-    environment:
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/dev/null
-    volumes:
-      - mongodb:/data/db
-    ports:
-        - 27017:27017
-    command: mongod  --logpath=/dev/null     
+  # rebipp_database:
+  #   image: mongo:latest
+  #   container_name: "rebipp_database"
+  #   environment:
+  #     - MONGO_DATA_DIR=/data/db
+  #     - MONGO_LOG_DIR=/dev/null
+  #   volumes:
+  #     - mongodb:/data/db
+  #   ports:
+  #       - 27017:27017
+  #   command: mongod  --logpath=/dev/null     
   rebipp_app:
     build: ./
     environment: 
-      - MONGO_HOST=rebipp_database      
+      - MONGODB_URI
     volumes:
       - ./:/usr/src/app 
     command: bash -c "npm run start /usr/src/app"    
     ports:
       - 3000:3000 
-    links:
-      - rebipp_database
-    depends_on:
-      - rebipp_database
+    # links:
+    #   - rebipp_database
+    # depends_on:
+    #   - rebipp_database
