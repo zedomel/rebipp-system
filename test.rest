@@ -1,0 +1,8 @@
+### UPDATE TERMS
+GET http://localhost:3000/api/v1/table/update-terms?url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=853840600
+
+### PUBLISH
+GET http://localhost:3000/api/v1/table/publish?url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=853840600
+
+### GET GLOSSARY
+GET http://localhost:3000/api/v1/glossary

@@ -2,37 +2,28 @@
 
 
 <ul id="interaction-list">
-    
+
 </ul>
 
 <script>
-	const updateInteractionList = () => {
+	const updateInteractionList = async () => {
 		$("#interaction-list").html("loading...")
-        getInteractions((result)=>{
-			$("#interaction-list").html("")
-			console.log(`[${new Date().toISOString()}] RESULT`,result)
-            result.forEach(record => {
-				if(
-					record["plant:dwc:Taxon:scientificName"] && record["plant:dwc:Taxon:scientificName"]["value"]
-					&& record["interaction:rebipp:Interaction:interactionType"] && record["interaction:rebipp:Interaction:interactionType"]["value"]
-					&& record["animal:dwc:Taxon:scientificName"] && record["animal:dwc:Taxon:scientificName"]["value"]
-				) {
-					$("#interaction-list").append(`
-						<div class="visitante">                    										
-							<p class="div-visitante">                    
-								<a href="/interaction-profile">                    
-									<i>${record["plant:dwc:Taxon:scientificName"]["value"]}</i> <span style="color:#123123">${record["interaction:rebipp:Interaction:interactionType"]["value"]}</span> <i>${record["animal:dwc:Taxon:scientificName"]["value"]}</i>									
-								</a>								
-								<a class="link-source" href="https://docs.google.com/spreadsheets/d/${record["experimentId"]}" target="_blank">source</a>
-							</p>                    
-							
-							<p class="div-visitante"></p>                        
-						</div>`)
-				}
-            })            
-        })
+		const interactions = await getInteractions()
+		$("#interaction-list").html("")
+		interactions.forEach(interaction => {
+			$("#interaction-list").append(`
+				<div class="visitante">
+					<p class="div-visitante">
+						<a href="/interaction-profile">
+							<i>${interaction["plant:dwc:Taxon:scientificName"]["originalValue"]}</i> <span style="color:#123123">${interaction["interaction:rebipp:Interaction:interactionType"]["state"]}</span> <i>${interaction["animal:dwc:Taxon:scientificName"]["originalValue"]}</i>									
+						</a>
+						<a class="link-source" href="https://docs.google.com/spreadsheets/d/${interaction["experimentId"]}" target="_blank">source</a>
+					</p>
+					<p class="div-visitante"></p>
+				</div>`)
+		})
 	}
-    $(function(){		
+    $(function(){
 		updateInteractionList()
     })
 </script>
