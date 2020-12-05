@@ -6,3 +6,8 @@ GET http://localhost:3000/api/v1/table/publish?url=https://docs.google.com/sprea
 
 ### GET GLOSSARY
 GET http://localhost:3000/api/v1/glossary
+
+
+### UPDATE TERMS
+GET https://rebipp-system.herokuapp.com/api/v1/table/update-terms?url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=853840600
+
