@@ -4,9 +4,9 @@
   "description": "",
   "main": "/lib",
   "scripts": {
-    "start": "nodemon lib/index.js --exec babel-node --ignore views/*",
+    "serve": "nodemon lib/index.js --exec babel-node --ignore views/*",
     "build": "babel lib -d dist --copy-files",
-    "serve": "node dist/index.js",
+    "start": "node dist/index.js",
     "test": "nodemon lib/test.js --exec babel-node"
   },
   "author": "",
