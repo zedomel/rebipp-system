@@ -1,13 +1,17 @@
 ### UPDATE TERMS
-GET http://localhost:3000/api/v1/table/update-terms?url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=853840600
+GET http://localhost:3000/api/v1/table/update-terms?adminTableId=1RQwi75GzGWVxCoHKVOiUCdS1AnTqzP8ms-5kP9rSNRI&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=1219397491
 
 ### PUBLISH
-GET http://localhost:3000/api/v1/table/publish?url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=853840600
+GET http://localhost:3000/api/v1/table/publish?adminTableId=1RQwi75GzGWVxCoHKVOiUCdS1AnTqzP8ms-5kP9rSNRI&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=1219397491
 
-### GET GLOSSARY
-GET http://localhost:3000/api/v1/glossary
+### DELETE
+GET http://localhost:3000/api/v1/table/delete?adminTableId=1RQwi75GzGWVxCoHKVOiUCdS1AnTqzP8ms-5kP9rSNRI&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=1219397491
 
+### GET INTERACTION
+GET http://localhost:3000/api/v1/interactions/en-US?page=1&filter=teste
 
 ### UPDATE TERMS
-GET https://rebipp-system.herokuapp.com/api/v1/table/update-terms?url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=853840600
+GET https://rebipp-system.herokuapp.com/api/v1/table/update-terms?url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=1219397491
 
+### PUBLISH
+GET http://rebipp-system.herokuapp.com/api/v1/table/publish?url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=1219397491

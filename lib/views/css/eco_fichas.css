@@ -23,10 +23,10 @@ a:link, a:visited {
 	text-decoration: none;
 	color: #510A5E;
 }
-a:hover, a:active {
+/* a:hover, a:active {
 	background-color: #510A5E;
 	color: white;
-}
+} */
 
 div.contem {
 	width: 1000px;
