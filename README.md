@@ -7,3 +7,7 @@
 ### Rodar a aplicação
 
 ```docker-compose up```
+
+### Deploy
+
+```npm run deploy```

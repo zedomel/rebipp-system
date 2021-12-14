@@ -4,6 +4,7 @@
   "description": "",
   "main": "/dist/index.js",
   "scripts": {
+    "deploy": "",
     "serve": "nodemon --exec babel-node lib/index.js",
     "build": "babel lib -d dist --copy-files",
     "start": "node dist/index.js",
