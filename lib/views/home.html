@@ -128,10 +128,10 @@
 			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 		</div>
 		<div class="offcanvas-body">
-			<button type="button" class="btn btn-primary">
+			<button id="downloadCsvInteractionsButton" type="button" class="btn btn-primary">
 				CSV
 			</button>
-			<button id="downloadInteractionsButton" type="button" class="btn btn-primary" >
+			<button id="downloadJsonInteractionsButton" type="button" class="btn btn-primary" >
 				JSON
 			</button>
 			<button type="button" class="btn btn-primary" disabled>
@@ -145,17 +145,20 @@
 							<h3>Dataset description</h3>
 							<p>The dataset downloaded are commposed by all of the filtered records.</p>
 						
-							<dt class="col-sm-5">Language:</dt>
-							<dd class="col-sm-7">...</dd>
+							<dt class="col-sm-7">Language:</dt>
+							<dd id="downloadLanguage" class="col-sm-5"></dd>
 
-							<dt class="col-sm-5">Count of records:</dt>
-							<dd class="col-sm-7">...</dd>
+							<dt class="col-sm-7">Count of records:</dt>
+							<dd id="downloadCountRecord" class="col-sm-5"></dd>
 						
-							<dt class="col-sm-5">Count of sources:</dt>
-							<dd class="col-sm-7">...</dd>
+							<dt class="col-sm-7">Count of sources:</dt>
+							<dd id="downloadCountSources" class="col-sm-5"></dd>
 						
-							<dt class="col-sm-5">Count of species:</dt>
-							<dd class="col-sm-7">...</dd>
+							<dt class="col-sm-7">Count of animal species:</dt>
+							<dd id="downloadCountAnimalSpecies" class="col-sm-5"></dd>
+
+							<dt class="col-sm-7">Count of plant species:</dt>
+							<dd id="downloadCountPlantSpecies" class="col-sm-5"></dd>
 						</dl>
 					</div>
 				</div>
@@ -212,6 +215,14 @@
 				</a>
 				`)
 		})
+		updateDownloadMetadata()
+	}
+	const updateDownloadMetadata = async() => {
+		const metadata = await getDownloadMetadata(selectedInteractionType)
+		$("#downloadCountRecord").html(metadata.countRecords)
+		$("#downloadCountSources").html(metadata.countSources)
+		$("#downloadCountPlantSpecies").html(metadata.countPlantSpecies)
+		$("#downloadCountAnimalSpecies").html(metadata.countAnimalSpecies)
 	}
 	$(function () {
 		
@@ -231,8 +242,11 @@
 		updateInteractionList()
 	})
 
-	$("#downloadInteractionsButton").click(function () {
-		downloadInteractions(page, selectedInteractionType)
+	$("#downloadJsonInteractionsButton").click(function () {
+		downloadJsonInteractions(page, selectedInteractionType)
+	})
+	$("#downloadCsvInteractionsButton").click(function () {
+		downloadCsvInteractions(page, selectedInteractionType)
 	})
 </script>
 
