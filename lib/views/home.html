@@ -128,7 +128,38 @@
 			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 		</div>
 		<div class="offcanvas-body">
-			<p>Work in progress. Coming soon.</p>
+			<button type="button" class="btn btn-primary">
+				CSV
+			</button>
+			<button id="downloadInteractionsButton" type="button" class="btn btn-primary" >
+				JSON
+			</button>
+			<button type="button" class="btn btn-primary" disabled>
+				Darwin Core Archive <span class="badge bg-secondary">soon</span>
+			</button>
+			<div class="container">
+				
+				<div class="row mt-5">
+					<div class="col-md-12">
+						<dl class="row">
+							<h3>Dataset description</h3>
+							<p>The dataset downloaded are commposed by all of the filtered records.</p>
+						
+							<dt class="col-sm-5">Language:</dt>
+							<dd class="col-sm-7">...</dd>
+
+							<dt class="col-sm-5">Count of records:</dt>
+							<dd class="col-sm-7">...</dd>
+						
+							<dt class="col-sm-5">Count of sources:</dt>
+							<dd class="col-sm-7">...</dd>
+						
+							<dt class="col-sm-5">Count of species:</dt>
+							<dd class="col-sm-7">...</dd>
+						</dl>
+					</div>
+				</div>
+		</div>
 		</div>
 	</div>
 
@@ -153,7 +184,6 @@
 		selectedInteractionType = type
 		if(selectedInteractionType === "") {
 			const label = internationalization["interactionType"][localStorage.getItem("language") || "en-US"]
-			console.log(`[${new Date().toISOString()}] LABEL`,label)
 			$("#dropdownMenuInteractionType").html(`${label}`)
 		} else {
 			$("#dropdownMenuInteractionType").html(type)
@@ -199,6 +229,10 @@
 		})
 		$("#current_page").html(page)
 		updateInteractionList()
+	})
+
+	$("#downloadInteractionsButton").click(function () {
+		downloadInteractions(page, selectedInteractionType)
 	})
 </script>
 
