@@ -134,8 +134,8 @@
 			<button id="downloadJsonInteractionsButton" type="button" class="btn btn-primary" >
 				JSON
 			</button>
-			<button type="button" class="btn btn-primary" disabled>
-				Darwin Core Archive <span class="badge bg-secondary">soon</span>
+			<button id="downloadDwcInteractionsButton" type="button" class="btn btn-primary" >
+				Darwin Core Archive
 			</button>
 			<div class="container">
 				
@@ -243,11 +243,15 @@
 	})
 
 	$("#downloadJsonInteractionsButton").click(function () {
-		downloadJsonInteractions(page, selectedInteractionType)
+		downloadJsonInteractions(selectedInteractionType)
 	})
 	$("#downloadCsvInteractionsButton").click(function () {
-		downloadCsvInteractions(page, selectedInteractionType)
+		downloadCsvInteractions(selectedInteractionType)
 	})
+	$("#downloadDwcInteractionsButton").click(function () {
+		downloadDwcInteractions(selectedInteractionType)
+	})
+	
 </script>
 
 </html>
