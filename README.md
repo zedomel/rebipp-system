@@ -6,4 +6,8 @@
 
 ### Rodar a aplicação
 
-```docker-compose up```
+```npm run serve```
+
+### Deploy in QA
+
+Merge to master branch

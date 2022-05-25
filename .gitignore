@@ -4,4 +4,4 @@ _rebipp-system
 .DS_Store
 \.v8flags-*.json
 .env
-
+*.zip
