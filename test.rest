@@ -1,11 +1,11 @@
 ### UPDATE TERMS
-GET http://localhost:3000/api/v1/table/update-terms?adminTableId=1RQwi75GzGWVxCoHKVOiUCdS1AnTqzP8ms-5kP9rSNRI&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=1219397491
+GET http://localhost:3000/api/v1/table/update-terms?adminTableId=1UStPm4SrfYLSdGaa7jQbRnP50o4-zQJA7och7Vw54VU&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=359918449
 
 ### PUBLISH
-GET http://localhost:3000/api/v1/table/publish?adminTableId=1RQwi75GzGWVxCoHKVOiUCdS1AnTqzP8ms-5kP9rSNRI&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=1219397491
+GET http://localhost:3000/api/v1/table/publish?adminTableId=1UStPm4SrfYLSdGaa7jQbRnP50o4-zQJA7och7Vw54VU&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=359918449
 
 ### DELETE
-GET http://localhost:3000/api/v1/table/delete?adminTableId=1RQwi75GzGWVxCoHKVOiUCdS1AnTqzP8ms-5kP9rSNRI&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=1219397491
+GET http://localhost:3000/api/v1/table/delete??adminTableId=1UStPm4SrfYLSdGaa7jQbRnP50o4-zQJA7och7Vw54VU&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=359918449
 
 ### GET INTERACTION
 GET http://localhost:3000/api/v1/interactions/en-US?page=1&filter=teste
@@ -15,3 +15,13 @@ GET https://rebipp-system.herokuapp.com/api/v1/table/update-terms?url=https://do
 
 ### PUBLISH
 GET http://rebipp-system.herokuapp.com/api/v1/table/publish?url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=1219397491
+
+### report error
+POST http://localhost:3000/api/v1/reportError
+content-type: application/json
+
+{
+  "errorDescription": "teste description",
+  "errorType": "dados",
+  "email": "allan.kv@gmail.com"
+}

@@ -5,14 +5,16 @@
 	<title>REBIPP</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="css/eco_fichas.css">
 	<script type="text/javascript" src="/js/main.js"></script>
 	<script type="text/javascript" src="/js/internationalization.js?v=1"></script>
 	<script type="text/javascript" src="js/interaction-worker.js"></script>
-	
+	<script type="text/javascript" src="js/report-worker.js"></script>
+
 </head>
 
 <body>
@@ -54,7 +56,9 @@
 					<h3 class="translate-html" id="mainPageTitle">Search for Interactions Data</h3>
 				</div>
 				<div class="col-md-2">
-					<button id="download" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" type="button" style="float: right;" class="btn btn-outline-primary translate-html">Download</button>
+					<button id="download" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+						aria-controls="offcanvasRight" type="button" style="float: right;"
+						class="btn btn-outline-primary translate-html">Download</button>
 				</div>
 			</div>
 		</div>
@@ -71,7 +75,8 @@
 					<div style="min-width: 1rem; width: 100%;" class="dropdown">
 						<button style="min-width: 1rem; width: 100%;" class="btn btn-secondary dropdown-toggle" type="button"
 							id="dropdownMenuInteractionType" data-bs-toggle="dropdown" aria-expanded="false">Interaction type</button>
-						<ul id="interactionTypeOptions" style="min-width: 1rem; width: 100%;" class="dropdown-menu" aria-labelledby="dropdownMenuInteractionType">
+						<ul id="interactionTypeOptions" style="min-width: 1rem; width: 100%;" class="dropdown-menu"
+							aria-labelledby="dropdownMenuInteractionType">
 						</ul>
 					</div>
 				</div>
@@ -98,7 +103,7 @@
 			<div class="col-md-12">
 				<div class="container mt-3">
 					<div id="interaction-list" class="list-group">
-						
+
 					</div>
 				</div>
 			</div>
@@ -131,29 +136,29 @@
 			<button id="downloadCsvInteractionsButton" type="button" class="btn btn-primary">
 				CSV
 			</button>
-			<button id="downloadJsonInteractionsButton" type="button" class="btn btn-primary" >
+			<button id="downloadJsonInteractionsButton" type="button" class="btn btn-primary">
 				JSON
 			</button>
-			<button id="downloadDwcInteractionsButton" type="button" class="btn btn-primary" >
+			<button id="downloadDwcInteractionsButton" type="button" class="btn btn-primary">
 				Darwin Core Archive
 			</button>
 			<div class="container">
-				
+
 				<div class="row mt-5">
 					<div class="col-md-12">
 						<dl class="row">
 							<h3>Dataset description</h3>
 							<p>The dataset downloaded are commposed by all of the filtered records.</p>
-						
+
 							<dt class="col-sm-7">Language:</dt>
 							<dd id="downloadLanguage" class="col-sm-5"></dd>
 
 							<dt class="col-sm-7">Count of records:</dt>
 							<dd id="downloadCountRecord" class="col-sm-5"></dd>
-						
+
 							<dt class="col-sm-7">Count of sources:</dt>
 							<dd id="downloadCountSources" class="col-sm-5"></dd>
-						
+
 							<dt class="col-sm-7">Count of animal species:</dt>
 							<dd id="downloadCountAnimalSpecies" class="col-sm-5"></dd>
 
@@ -162,10 +167,47 @@
 						</dl>
 					</div>
 				</div>
-		</div>
+			</div>
 		</div>
 	</div>
+	<div id="contactForm">
 
+		<h1 style="margin-bottom:1em">Encontrou algum problema?</h1>
+		<small>Comunique-nos sobre qualquer problema no sistema, nos dados ou nas imagens.</small>
+
+
+		<div style="margin:1em">
+			<label style="margin:1em">
+				Onde foi percebido o problema?
+			</label>
+			<select id="feedback-category">
+				<option value="" selected></option>
+				<option value="data">Dados</option>
+				<option value="system">Sistema</option>
+			</select>
+		</div>
+		<textarea id="feedback-msg" placeholder="Descreva com detalhes o que precisa ser corrigido"
+			style="height: 80px; resize: none; margin: .8em auto; font-family: inherit;  text-transform: inherit;  font-size: inherit; display: block;  width: 280px;  padding: .4em;"></textarea>
+		<div style="margin:1em">
+			<label>
+				Email de contato
+			</label>
+			<input type="email" id="email"
+				style="margin: .8em auto; font-family: inherit;  text-transform: inherit;  font-size: inherit; display: block;  width: 280px;  padding: .4em;" />
+		</div>
+		<div id="no-auth">
+
+			<button id="send-feedback" class="loginBtn loginBtn--google">
+				Enviar
+			</button>
+
+		</div>
+		<div id="auth">
+			<input onclick="exitFeedback();" class="formBtn" type="reset" value="Sair" />
+		</div>
+		<div id="result"></div>
+	</div>
+	<button id="popup" class="feedback-button" onclick="toggle_visibility()">Reportar</button>
 </body>
 <script>
 	let page = 1
@@ -175,7 +217,7 @@
 		updateInteractionList()
 	}
 	const previousPage = () => {
-		if(page === 1) {
+		if (page === 1) {
 			return
 		}
 		page--
@@ -185,7 +227,7 @@
 	let selectedInteractionType = ""
 	const selectInteractionType = (type) => {
 		selectedInteractionType = type
-		if(selectedInteractionType === "") {
+		if (selectedInteractionType === "") {
 			const label = internationalization["interactionType"][localStorage.getItem("language") || "en-US"]
 			$("#dropdownMenuInteractionType").html(`${label}`)
 		} else {
@@ -205,7 +247,7 @@
 				<a href="https://docs.google.com/spreadsheets/d/${interaction["experimentId"]}" target="blank" class="list-group-item list-group-item-action " aria-current="true">
 					<div class="d-flex w-100 justify-content-between">
 						<h5 class="mb-1"><span class="link-primary"><i>${interaction["plant:dwc:Taxon:scientificName"]["originalValue"]}</i></span> <span
-								class="link-secondary">${interaction["interaction:rebipp:Interaction:interactionType"]["vocabulary"].toLowerCase()}</span> <span class="link-danger"><i>${interaction["animal:dwc:Taxon:scientificName"]["originalValue"]}</i></span></h5>
+								class="link-secondary">${interaction["interaction:rebipp:Interaction:interactionType"]["vocabulary"]?.toLowerCase()}</span> <span class="link-danger"><i>${interaction["animal:dwc:Taxon:scientificName"]["originalValue"]}</i></span></h5>
 						<small>${interaction["datasetMetadata"]["eml:dataset:coverage:temporalCoverage:endDate"]}</small>
 					</div>
 					<div class="blockquote"></div>
@@ -217,25 +259,58 @@
 		})
 		updateDownloadMetadata()
 	}
-	const updateDownloadMetadata = async() => {
+	const updateDownloadMetadata = async () => {
 		const metadata = await getDownloadMetadata(selectedInteractionType)
 		$("#downloadCountRecord").html(metadata.countRecords)
 		$("#downloadCountSources").html(metadata.countSources)
 		$("#downloadCountPlantSpecies").html(metadata.countPlantSpecies)
 		$("#downloadCountAnimalSpecies").html(metadata.countAnimalSpecies)
 	}
+
+	function exitFeedback() {
+		$('#contactForm').fadeOut();
+	}
+	$("#send-feedback").click(function (e) {
+		var data = {
+				errorDescription: $("#feedback-msg").val(),
+				errorType: $("#feedback-category").val(),
+				email: $("#email").val()
+		}
+		if (data.errorDescription != "" || data.errorType || data.email) {
+			reportError(data, result => {
+				alert("Obrigado pela colaboração. \nEntraremos em contato informando sobre a correção do problema.")
+				$("#feedback-msg").val("")
+				$("#feedback-category").val("")
+				$('#contactForm').fadeOut()
+			})
+		} else {
+			alert("É necessário preencher todos os campos.")
+		}
+		e.preventDefault();
+	})
+
+	function toggle_visibility() {
+		$('#contactForm').fadeToggle();
+	}
 	$(function () {
-		
-		$("#filterPlantName").attr("placeholder", internationalization["plantNameLabel"][localStorage.getItem("language") || "en-US"]);
-		$("#filterAnimalName").attr("placeholder", internationalization["animalNameLabel"][localStorage.getItem("language") ||"en-US"]);
-		$("#filterSource").attr("placeholder", internationalization["sourceLabel"][localStorage.getItem("language") ||"en-US"]);
+
+		$("#filterPlantName").attr("placeholder", internationalization["plantNameLabel"][localStorage.getItem(
+			"language") || "en-US"]);
+		$("#filterAnimalName").attr("placeholder", internationalization["animalNameLabel"][localStorage.getItem(
+			"language") || "en-US"]);
+		$("#filterSource").attr("placeholder", internationalization["sourceLabel"][localStorage.getItem("language") ||
+			"en-US"
+		]);
 		getInteractionTypes().then(interactionTypes => {
 			const label = internationalization["interactionType"][localStorage.getItem("language") || "en-US"]
 			$("#dropdownMenuInteractionType").html(`${label}`)
-			$("#interactionTypeOptions").append(`<li><a class="dropdown-item" href="javascript:selectInteractionType('')">-</a></li>`)
+			$("#interactionTypeOptions").append(
+				`<li><a class="dropdown-item" href="javascript:selectInteractionType('')">-</a></li>`)
 			interactionTypes.forEach(interactionType => {
 				if (interactionType)
-					$("#interactionTypeOptions").append(`<li><a class="dropdown-item" href="javascript:selectInteractionType('${interactionType}')">${interactionType}</a></li>`)
+					$("#interactionTypeOptions").append(
+						`<li><a class="dropdown-item" href="javascript:selectInteractionType('${interactionType}')">${interactionType}</a></li>`
+					)
 			})
 		})
 		$("#current_page").html(page)
@@ -251,7 +326,6 @@
 	$("#downloadDwcInteractionsButton").click(function () {
 		downloadDwcInteractions(selectedInteractionType)
 	})
-	
 </script>
 
 </html>
