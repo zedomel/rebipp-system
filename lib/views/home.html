@@ -22,10 +22,13 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-md-10">
+			<div class="col-md-10 d-flex">
 				<div class="logo"><img
 						src="https://www.rebipp.org.br/wp-content/uploads/2017/08/12654381_10153871230836407_6739059577886817957_n-01-768x949.png"
 						alt="REBIPP" height="194px" /></div>
+				<div class="" style="margin: auto 0;">
+					<img src="/images/surpass_logo.png" alt="SURPASS" height="140px"/>
+				</div>
 			</div>
 			<div class="col-md-2 pt-3 " style="position: relative">
 				<div class="align-bottom"
@@ -41,6 +44,12 @@
 							<a style="padding: 0px; margin-left: 0.5em;" class="nav-link" href="#">
 								<img onclick="setLanguage('en-US') || translatePage() || updateInteractionList()"
 									src="/images/en_GB.png">
+							</a>
+						</li>
+						<li class="nav-item">
+							<a style="padding: 0px; margin-left: 0.5em;" class="nav-link" href="#">
+								<img onclick="setLanguage('es-ES') || translatePage() || updateInteractionList()"
+									src="/images/es_ES.png">
 							</a>
 						</li>
 					</ul>
@@ -326,6 +335,7 @@
 	$("#downloadDwcInteractionsButton").click(function () {
 		downloadDwcInteractions(selectedInteractionType)
 	})
+
 </script>
 
 </html>
