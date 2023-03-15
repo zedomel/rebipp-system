@@ -287,11 +287,14 @@
 		}
 		if (data.errorDescription != "" || data.errorType || data.email) {
 			reportError(data, result => {
-				alert("Obrigado pela colaboração. \nEntraremos em contato informando sobre a correção do problema.")
+				
 				$("#feedback-msg").val("")
 				$("#feedback-category").val("")
 				$('#contactForm').fadeOut()
+		
 			})
+			exitFeedback()
+			alert("Obrigado pela colaboração. \nEntraremos em contato informando sobre a correção do problema.")
 		} else {
 			alert("É necessário preencher todos os campos.")
 		}
