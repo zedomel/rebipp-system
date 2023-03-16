@@ -27,10 +27,13 @@
 						src="https://www.rebipp.org.br/wp-content/uploads/2017/08/12654381_10153871230836407_6739059577886817957_n-01-768x949.png"
 						alt="REBIPP" height="194px" /></div>
 				<div class="" style="margin: auto 0;">
-					<img src="/images/surpass_logo.png" alt="SURPASS" height="140px"/>
+					<img src="/images/surpass_logo.png" alt="SURPASS" height="140px" />
 				</div>
 			</div>
 			<div class="col-md-2 pt-3 " style="position: relative">
+				<a style="color: #fff" class="nav-link btn btn-success" aria-current="page" href="/how-to-contribute">
+					How to Contribute
+				</a>
 				<div class="align-bottom"
 					style="bottom: 0; right: 0; position: absolute; float: right; margin-bottom: 1em; background-color: hsla(0, 0%, 100%, 0.582);">
 					<ul class="nav justify-content-end" style="margin: 0.5em">
@@ -82,8 +85,9 @@
 				</div>
 				<div class="col-md-3">
 					<div style="min-width: 1rem; width: 100%;" class="dropdown">
-						<button style="min-width: 1rem; width: 100%;" class="btn btn-secondary dropdown-toggle" type="button"
-							id="dropdownMenuInteractionType" data-bs-toggle="dropdown" aria-expanded="false">Interaction type</button>
+						<button style="min-width: 1rem; width: 100%;" class="btn btn-secondary dropdown-toggle"
+							type="button" id="dropdownMenuInteractionType" data-bs-toggle="dropdown"
+							aria-expanded="false">Interaction type</button>
 						<ul id="interactionTypeOptions" style="min-width: 1rem; width: 100%;" class="dropdown-menu"
 							aria-labelledby="dropdownMenuInteractionType">
 						</ul>
@@ -281,17 +285,17 @@
 	}
 	$("#send-feedback").click(function (e) {
 		var data = {
-				errorDescription: $("#feedback-msg").val(),
-				errorType: $("#feedback-category").val(),
-				email: $("#email").val()
+			errorDescription: $("#feedback-msg").val(),
+			errorType: $("#feedback-category").val(),
+			email: $("#email").val()
 		}
 		if (data.errorDescription != "" || data.errorType || data.email) {
 			reportError(data, result => {
-				
+
 				$("#feedback-msg").val("")
 				$("#feedback-category").val("")
 				$('#contactForm').fadeOut()
-		
+
 			})
 			exitFeedback()
 			alert("Obrigado pela colaboração. \nEntraremos em contato informando sobre a correção do problema.")
