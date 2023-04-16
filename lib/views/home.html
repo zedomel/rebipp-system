@@ -9,24 +9,26 @@
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-	
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
-	<link rel="stylesheet" href="css/eco_fichas.css">
-	<script type="text/javascript" src="/js/main.js"></script>
-	<script type="text/javascript" src="/js/internationalization.js?v=1"></script>
-	<script type="text/javascript" src="js/interaction-worker.js"></script>
-	<script type="text/javascript" src="js/report-worker.js"></script>
+<link rel="stylesheet" href="css/eco_fichas.css">
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/internationalization.js?v=1"></script>
+<script type="text/javascript" src="js/interaction-worker.js"></script>
+<script type="text/javascript" src="js/report-worker.js"></script>
 
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-		integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-		crossorigin=""/>
-	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-		integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-		crossorigin=""></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+	integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+	integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+</script>
 </head>
 
 <body>
@@ -97,9 +99,8 @@
 				</div>
 				<div class="col-md-3">
 					<div style="min-width: 1rem; width: 100%;" class="dropdown">
-						<button style="min-width: 1rem; width: 100%;" class="btn btn-secondary dropdown-toggle"
-							type="button" id="dropdownMenuInteractionType" data-bs-toggle="dropdown"
-							aria-expanded="false">Interaction type</button>
+						<button style="min-width: 1rem; width: 100%;" class="btn btn-secondary dropdown-toggle" type="button"
+							id="dropdownMenuInteractionType" data-bs-toggle="dropdown" aria-expanded="false">Interaction type</button>
 						<ul id="interactionTypeOptions" style="min-width: 1rem; width: 100%;" class="dropdown-menu"
 							aria-labelledby="dropdownMenuInteractionType">
 						</ul>
@@ -143,25 +144,22 @@
 
 	</div>
 
-	
 
-	<div class="container pb-5" style="background-color: white;">
-		<div class="row pt-5">
-			<div class="col-md-12">
+
+	<div class="container pb-5" style="background-color: white; ">
+		<div style="padding-top: 0px; padding-left: 0px;" class="row ">
+			<div style="padding-left: 0px;" class="col-md-12">
 				<div class="container mt-3">
 					<div id="interaction-list" class="list-group">
 
 					</div>
 					<div id="map-view">
-						<div id="map" style="width: 100%; height: 500px;"></div>
 						
-						
-						<div class="container mt-3">
+						<div style="margin-bottom: 1em; padding-left: 0px;" class="container mt-3">
 							<div class="col-md-3">
 								<div style="min-width: 1rem; width: 100%;" class="dropdown">
-									<button style="min-width: 1rem; width: 100%;" class="btn btn-secondary dropdown-toggle"
-										type="button" id="dropdownMenuColorMap" data-bs-toggle="dropdown"
-										aria-expanded="false">Cores por</button>
+									<button style="min-width: 1rem; width: 100%;" class="btn btn-secondary dropdown-toggle" type="button"
+										id="dropdownMenuColorMap" data-bs-toggle="dropdown" aria-expanded="false">Cores por</button>
 									<ul id="map-color-selector" style="min-width: 1rem; width: 100%;" class="dropdown-menu"
 										aria-labelledby="dropdownMenuColorMap">
 										<li><a class="dropdown-item" href="javascript:selectMapColor('')">-</a></li>
@@ -172,11 +170,30 @@
 								</div>
 							</div>
 						</div>
-						
-						
-
+						<div id="map" style="width: 100%; height: 500px;"></div>
 					</div>
-					
+
+					<div id="chart-view" class="container pb-5" style="background-color: white; padding-left: 0px; padding-top: 0px; margin-bottom: 0px">
+									<div style="padding-left: 0px; margin-top: 0px; margin-bottom: 1em;" class="container mt-3">
+										<div style="padding-top: 0px; margin-top: 0px" class="col-md-3">
+											<div style="min-width: 1rem; width: 100%; padding-top: 0px; margin-top: 0px" class="dropdown">
+												<button style="min-width: 1rem; width: 100%; z-index: 10000;" class="btn btn-secondary dropdown-toggle" type="button"
+													id="dropdownMenuColorMap" data-bs-toggle="dropdown" aria-expanded="false">Agrupar por nome científico</button>
+												<ul id="selector-chart-group-by" style="min-width: 1rem; width: 100%; z-index: 10000;" class="dropdown-menu"
+													aria-labelledby="dropdownMenuColorMap">
+													<li style="z-index: 10000;"><a class="dropdown-item" href="javascript:selectChartGroupBy('nome científico')">Nome científico</a></li>
+													<li><a class="dropdown-item" href="javascript:selectChartGroupBy('gênero')">Gênero</a></li>
+													<li><a class="dropdown-item" href="javascript:selectChartGroupBy('família')">Família</a></li>
+													<li><a class="dropdown-item" href="javascript:selectChartGroupBy('ordem')">Ordem</a></li>
+													<li><a class="dropdown-item" href="javascript:selectChartGroupBy('filo')">Filo</a></li>
+													<li><a class="dropdown-item" href="javascript:selectChartGroupBy('reino')">Reino</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div id="sankey_basic" style="width: 100%; height: 500px;"></div>
+					</div>
+
 				</div>
 			</div>
 			<div class="col-md-12 mt-3">
@@ -282,9 +299,6 @@
 	<button id="popup" class="feedback-button" onclick="toggle_visibility()">Reportar</button>
 </body>
 <script>
-
-
-	
 	let page = 1
 	const nextPage = () => {
 		page++
@@ -315,7 +329,8 @@
 		selectedColorMap = selectedColorBy
 		colorBy = selectedColorBy
 		if (selectedColorMap === "") {
-			const label = selectedColorBy//internationalization["interactionType"][localStorage.getItem("language") || "en-US"]
+			const label =
+				selectedColorBy //internationalization["interactionType"][localStorage.getItem("language") || "en-US"]
 			$("#select-map-color").html(`${label}`)
 			$("#dropdownMenuColorMap").html(`Cor por ${label}`)
 		} else {
@@ -326,6 +341,7 @@
 	}
 	const updateInteractionList = async () => {
 		$("#map-view").hide()
+		$("#chart-view").hide()
 		$("#interaction-list").show()
 		$("#interaction-list").html("loading...")
 		const interactions = await getInteractions(page, selectedInteractionType)
@@ -388,6 +404,7 @@
 	}
 	$(function () {
 		$("#map-view").hide()
+		$("#chart-view").hide()
 		$("#filterPlantName").attr("placeholder", internationalization["plantNameLabel"][localStorage.getItem(
 			"language") || "en-US"]);
 		$("#filterAnimalName").attr("placeholder", internationalization["animalNameLabel"][localStorage.getItem(
@@ -409,19 +426,22 @@
 		})
 		$("#current_page").html(page)
 		updateInteractionList()
-		$(".btn").click(function(){
-        $(".btn").removeClass("active")
-        $(this).addClass("active")
-			if($(this).attr('id') === 'map-button') {
-					displayMap()
-				} else if($(this).attr('id') === 'list-button') {
-					updateInteractionList()
-				}
-				
-      });
+		$(".btn").click(function () {
+			$(".btn").removeClass("active")
+			$(this).addClass("active")
+			if ($(this).attr('id') === 'map-button') {
+				displayMap()
+			} else if ($(this).attr('id') === 'list-button') {
+				updateInteractionList()
+			} else if ($(this).attr('id') === 'chart-button') {
+				displayChart()
+			}
+
+		})
+
 	})
 
-	
+
 	$("#downloadJsonInteractionsButton").click(function () {
 		downloadJsonInteractions(selectedInteractionType)
 	})
@@ -441,7 +461,7 @@
 			iconAnchor: [12, 41],
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
-		}), 
+		}),
 		"gold": new L.Icon({
 			iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png`,
 			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -449,7 +469,7 @@
 			iconAnchor: [12, 41],
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
-		}), 
+		}),
 		"red": new L.Icon({
 			iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png`,
 			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -457,7 +477,7 @@
 			iconAnchor: [12, 41],
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
-		}), 
+		}),
 		"green": new L.Icon({
 			iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png`,
 			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -465,7 +485,7 @@
 			iconAnchor: [12, 41],
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
-		}), 
+		}),
 		"orange": new L.Icon({
 			iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png`,
 			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -473,7 +493,7 @@
 			iconAnchor: [12, 41],
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
-		}), 
+		}),
 		"yellow": new L.Icon({
 			iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yello.png`,
 			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -481,7 +501,7 @@
 			iconAnchor: [12, 41],
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
-		}), 
+		}),
 		"violet": new L.Icon({
 			iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png`,
 			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -489,7 +509,7 @@
 			iconAnchor: [12, 41],
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
-		}), 
+		}),
 		"grey": new L.Icon({
 			iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png`,
 			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -497,7 +517,7 @@
 			iconAnchor: [12, 41],
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
-		}), 
+		}),
 		"black": new L.Icon({
 			iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png`,
 			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -505,67 +525,83 @@
 			iconAnchor: [12, 41],
 			popupAnchor: [1, -34],
 			shadowSize: [41, 41]
-		})}
+		})
+	}
 	let map
 	const displayMap = async () => {
+		$('#dropdownMenuColorMap').click(function(event) {
+			$('.dropdown-menu').css('z-index', '10000');
+		})
 		$("#interaction-list").hide()
 		$("#map-view").show()
+		$("#chart-view").hide()
 
 		const data = await getInteractions(null, selectedInteractionType)
 		const prepareData = data.filter(item => {
-			return item["interaction:dwc:Location:decimalLatitude"]["originalValue"]?.length > 0 && item["interaction:dwc:Location:decimalLongitude"]["originalValue"]?.length > 0
+			return item["interaction:dwc:Location:decimalLatitude"]["originalValue"]?.length > 0 && item[
+				"interaction:dwc:Location:decimalLongitude"]["originalValue"]?.length > 0
 		})
 
 		let preparedColor = {}
 		const prepareColors = () => {
 			let i = 0
-			
-			if(colorBy === 'Planta') {
+
+			if (colorBy === 'Planta') {
 				prepareData.map(item => {
-					if(!preparedColor[item["plant:dwc:Taxon:scientificName"]["originalName"]]) {
+					if (!preparedColor[item["plant:dwc:Taxon:scientificName"]["originalName"]]) {
 						preparedColor[item["plant:dwc:Taxon:scientificName"]["originalName"]] = Object.keys(colors)[i]
-						i = i < 9 ? i+1 : 0
+						i = i < 9 ? i + 1 : 0
 					}
 				})
-			} else if(colorBy === 'Interação') {
+			} else if (colorBy === 'Interação') {
 				prepareData.map(item => {
-					if(!preparedColor[item["interaction:rebipp:Interaction:interactionType"]["state"]]) {
-						preparedColor[item["interaction:rebipp:Interaction:interactionType"]["state"]] = Object.keys(colors)[i]
-						i = i < 9 ? i+1 : 0
+					if (!preparedColor[item["interaction:rebipp:Interaction:interactionType"]["state"]]) {
+						preparedColor[item["interaction:rebipp:Interaction:interactionType"]["state"]] = Object.keys(
+							colors)[i]
+						i = i < 9 ? i + 1 : 0
 					}
 				})
-			} else if(colorBy === 'Animal') {
+			} else if (colorBy === 'Animal') {
 				prepareData.map(item => {
-					if(!preparedColor[item["animal:dwc:Taxon:scientificName"]["originalName"]]) {
+					if (!preparedColor[item["animal:dwc:Taxon:scientificName"]["originalName"]]) {
 						preparedColor[item["animal:dwc:Taxon:scientificName"]["originalName"]] = Object.keys(colors)[i]
-						i = i < 9 ? i+1 : 0
+						i = i < 9 ? i + 1 : 0
 					}
 				})
 			} else {
-				
+
 			}
 		}
 		prepareColors()
-		
+
 		console.log(prepareData)
 
 		let interactions = L.layerGroup(prepareData.map(item => {
 			const lat = item["interaction:dwc:Location:decimalLatitude"]["originalValue"]
 			const lng = item["interaction:dwc:Location:decimalLongitude"]["originalValue"]
-			const label = `<h5 class="mb-1"><span class="link-primary"><i>${item["plant:dwc:Taxon:scientificName"]["originalValue"]}</i></span> <span
+			const label =
+				`<h5 class="mb-1"><span class="link-primary"><i>${item["plant:dwc:Taxon:scientificName"]["originalValue"]}</i></span> <span
 								class="link-secondary">${item["interaction:rebipp:Interaction:interactionType"]["vocabulary"]?.toLowerCase()}</span> <span class="link-danger"><i>${item["animal:dwc:Taxon:scientificName"]["originalValue"]}</i></span></h5>`
-			if(colorBy === 'Planta') {
+			if (colorBy === 'Planta') {
 				const icon = colors[preparedColor[item["plant:dwc:Taxon:scientificName"]["originalName"]]]
-				return L.marker([lat, lng], {icon}).bindPopup(label)
-			} else if(colorBy === 'Interação') {
+				return L.marker([lat, lng], {
+					icon
+				}).bindPopup(label)
+			} else if (colorBy === 'Interação') {
 				const icon = colors[preparedColor[item["interaction:rebipp:Interaction:interactionType"]["state"]]]
-				return L.marker([lat, lng], {icon}).bindPopup(label)
-			} else if(colorBy === 'Animal') {
+				return L.marker([lat, lng], {
+					icon
+				}).bindPopup(label)
+			} else if (colorBy === 'Animal') {
 				const icon = colors[preparedColor[item["animal:dwc:Taxon:scientificName"]["originalName"]]]
-				return L.marker([lat, lng], {icon}).bindPopup(label)
+				return L.marker([lat, lng], {
+					icon
+				}).bindPopup(label)
 			} else {
 				const icon = colors["blue"]
-				return L.marker([lat, lng], {icon}).bindPopup(label)
+				return L.marker([lat, lng], {
+					icon
+				}).bindPopup(label)
 			}
 		}))
 
@@ -574,7 +610,7 @@
 			attribution: '© OpenStreetMap'
 		});
 
-		if(!map) {
+		if (!map) {
 			map = L.map('map', {
 				center: [-15.83, -47.86],
 				zoom: 4,
@@ -593,8 +629,75 @@
 		updateDownloadMetadata()
 	}
 	const updateColorMap = colorBy => {
-			displayMap()
+		displayMap()
 	}
+
+
+
+	let chart
+	let chartGroupBy = "nome científico"
+	const displayChart = async () => {
+		$("#interaction-list").hide()
+		$("#map-view").hide()
+		$("#chart-view").show()
+
+		const rawInteractionData = await getInteractions(null, selectedInteractionType)
+		let interactionAggregation = {}
+		rawInteractionData.forEach(item => {
+			let key
+			key = (item["animal:dwc:Taxon:scientificName"]["originalValue"] || "Undefined") + "|" + (item[
+				"plant:dwc:Taxon:scientificName"]["originalValue"] || "Undefined")
+			if(chartGroupBy === 'gênero') {
+				key = (item["animal:dwc:Taxon:genus"]["originalValue"] || "Undefined") + "|" + (item[
+				"plant:dwc:Taxon:genus"]["originalValue"] || "Undefined")
+			} else if(chartGroupBy === 'família') {
+				key = (item["animal:dwc:Taxon:family"]["originalValue"] || "Undefined") + "|" + (item[
+				"plant:dwc:Taxon:family"]["originalValue"] || "Undefined")
+			}else if(chartGroupBy === 'ordem') {
+				key = (item["animal:dwc:Taxon:order"]["originalValue"] || "Undefined") + "|" + (item[
+				"plant:dwc:Taxon:order"]["originalValue"] || "Undefined")
+			} else if(chartGroupBy === 'filo') {
+				key = (item["animal:dwc:Taxon:phylum"]["originalValue"] || "Undefined") + "|" + (item[
+				"plant:dwc:Taxon:phylum"]["originalValue"] || "Undefined")
+			} else if(chartGroupBy === 'reino') {
+				key = (item["animal:dwc:Taxon:kingdom"]["originalValue"] || "Undefined") + "|" + (item[
+				"plant:dwc:Taxon:kingdom"]["originalValue"] || "Undefined")
+			} 
+			interactionAggregation[key] = interactionAggregation[key] ? interactionAggregation[key] + 1 : 1
+		})
+
+		let rawData = Object.keys(interactionAggregation).map(key => {
+			const animal = key.split("|")[0]
+			const plant = key.split("|")[1]
+			return [animal, plant, interactionAggregation[key]]
+		})
+
+		var data = new google.visualization.DataTable();
+		data.addColumn('string', 'From');
+		data.addColumn('string', 'To');
+		data.addColumn('number', 'Count of interactions');
+		data.addRows(rawData);
+
+		// Sets chart options.
+		var options = {
+			width: "100%",
+		};
+		if (!chart) {
+			// Instantiates and draws our chart, passing in some options.
+			chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+		}
+		chart.draw(data, options);
+
+		updateDownloadMetadata()
+	}
+	const selectChartGroupBy = groupBy => {
+		chartGroupBy = groupBy
+		displayChart()
+
+	}
+	google.charts.load('current', {
+		'packages': ['sankey']
+	});
 </script>
 
 </html>
