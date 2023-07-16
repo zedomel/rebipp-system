@@ -1,5 +1,5 @@
 ### DATA QUALITY
-GET http://localhost:3000/api/v1/table/data-quality?adminTableId=1UStPm4SrfYLSdGaa7jQbRnP50o4-zQJA7och7Vw54VU&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=622170842
+GET http://localhost:3000/api/v1/table/data-quality?adminTableId=1RQwi75GzGWVxCoHKVOiUCdS1AnTqzP8ms-5kP9rSNRI&url=https://docs.google.com/spreadsheets/d/1hibebNvP65Rxak-vsjoFa_sbTWbOYK66CmTW5qiTlSA/edit#gid=1336033447
 
 ### DATA QUALITY HOM
 GET http://localhost:3000/api/v1/table/data-quality?adminTableId=1UStPm4SrfYLSdGaa7jQbRnP50o4-zQJA7och7Vw54VU&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=622170842
@@ -8,7 +8,7 @@ GET http://localhost:3000/api/v1/table/data-quality?adminTableId=1UStPm4SrfYLSdG
 GET http://localhost:3000/api/v1/table/update-terms?adminTableId=1UStPm4SrfYLSdGaa7jQbRnP50o4-zQJA7och7Vw54VU&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=359918449
 
 ### PUBLISH
-GET http://localhost:3000/api/v1/table/publish?adminTableId=1UStPm4SrfYLSdGaa7jQbRnP50o4-zQJA7och7Vw54VU&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=622170842
+GET http://localhost:3000/api/v1/table/publish?adminTableId=1UStPm4SrfYLSdGaa7jQbRnP50o4-zQJA7och7Vw54VU&url=https://docs.google.com/spreadsheets/d/1hibebNvP65Rxak-vsjoFa_sbTWbOYK66CmTW5qiTlSA/edit#gid=1336033447
 
 ### DELETE
 GET http://localhost:3000/api/v1/table/delete??adminTableId=1UStPm4SrfYLSdGaa7jQbRnP50o4-zQJA7och7Vw54VU&url=https://docs.google.com/spreadsheets/d/128SFltBPse_qao9Yobkw5eCavPjNjMqSfgeBRz8kQ8Q/edit#gid=359918449
